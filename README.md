@@ -1,6 +1,6 @@
 # TelSearch
 
-A ruby client for the tel.search.ch/api.
+A ruby client for the tel.search.ch api. [Docs](https://tel.search.ch/api/help.en.html)
 
 ## Installation
 
@@ -19,13 +19,14 @@ Or install it yourself as:
     $ gem install tel_search
 
 ## Usage
+```ruby
+client = TelSearch::Client.new(ENV['TEL_API_KEY'])
+query = TelSearch::Query.new(where: 'Wallisellen', what: 'Renuo AG', language: :de)
 
-    client = TelSearch::Client.new(ENV['TEL_API_KEY'])
-    query = TelSearch::Query.new(where: 'Wallisellen', what: 'Renuo AG', language: :de)
-    
-    response = client.execute(query)
-    
-    response.entries.first.name == 'Renuo AG'
+response = client.execute(query)
+
+response.entries.first.name == 'Renuo AG'
+```
 
 ## Development
 
