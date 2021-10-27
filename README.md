@@ -1,5 +1,8 @@
 # TelSearch
 
+[![Gem Version](https://badge.fury.io/rb/tel_search.svg)](https://badge.fury.io/rb/tel_search)
+
+
 A ruby client for the tel.search.ch api. [Docs](https://tel.search.ch/api/help.en.html)
 
 ## Installation
