@@ -12,7 +12,7 @@ RSpec.describe "Simple Tel Query", :vcr do
     it "returns a response with the informaton for the address" do
       entries = subject.entries
       expect(entries[0].name).to eq("Farnell AG")
-      expect(entries[0].last_name).to eq("Farnell AG")
+      expect(entries[0].company).to eq("Farnell AG")
       expect(entries[1].name).to eq("P&I Parfums GmbH")
       expect(entries[2].name).to eq("Eberhart Schmierstoffe AG Mobil Schmierstoffe")
       expect(entries[3].name).to eq("J'COCOS GmbH")
@@ -49,6 +49,7 @@ RSpec.describe "Simple Tel Query", :vcr do
 
       it "returns a response with the company information" do
         expect(subject.entries.first.name).to eq("Renuo AG")
+        expect(subject.entries.first.company).to eq("Renuo AG")
       end
     end
   end
