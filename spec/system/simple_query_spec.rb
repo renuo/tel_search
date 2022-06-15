@@ -28,6 +28,18 @@ RSpec.describe "Simple Tel Query", :vcr do
       it "returns a response with the company information" do
         expect(subject.entries.first.name).to eq("Herold Taxi AG")
       end
+
+      it "returns a response with information about a person" do
+        entry = subject.entries.first
+        expect(entry.type).to eq("Person")
+        expect(entry.name).to eq("Mustermensch")
+        expect(entry.first_name).to eq("Sarah")
+        expect(entry.street).to eq("Musterstrasse")
+        expect(entry.street_number).to eq("13")
+        expect(entry.zip).to eq("9000")
+        expect(entry.city).to eq("Musterhausen")
+        expect(entry.canton).to eq("SG")
+      end
     end
 
     context "when the query is a name" do

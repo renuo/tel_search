@@ -3,7 +3,8 @@ module TelSearch
     ATTRIBUTES = %i[title type name first_name last_name street street_number zip city canton phone]
 
     ATTRIBUTE_MAPPING = {
-      streetno: :street_number
+      streetno: :street_number,
+      firstname: :first_name
     }
 
     attr_accessor(*ATTRIBUTES)
