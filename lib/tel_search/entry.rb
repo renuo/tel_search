@@ -3,8 +3,9 @@ module TelSearch
     ATTRIBUTES = %i[title type name first_name last_name street street_number zip city canton phone]
 
     ATTRIBUTE_MAPPING = {
-      streetno: :street_number,
-      firstname: :first_name
+      streetno: [:street_number],
+      firstname: [:first_name],
+      name: [:name, :last_name]
     }
 
     attr_accessor(*ATTRIBUTES)
@@ -26,9 +27,10 @@ module TelSearch
 
     def collect_tel_information(feed_entry)
       feed_entry.xpath("./tel:*").each_with_object(Hash.new { |h, k| h[k] = [] }) do |node, hash|
-        custom_key = ATTRIBUTE_MAPPING[node.name.to_sym]
-        node_name = custom_key || node.name.to_sym
-        hash[node_name] << node.text
+        custom_keys = ATTRIBUTE_MAPPING[node.name.to_sym]
+        (custom_keys || [node.name.to_sym]).each do |node_name|
+          hash[node_name] << node.text
+        end
       end
     end
 
