@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tel.search.ch/api/?firma=1&key=<TEL_KEY>&lang=en&maxnum=200&privat=1&was=071%202222%20777&wo=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - tel.search.ch
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jun 2022 15:38:48 GMT
+      Server:
+      - Apache
+      Permissions-Policy:
+      - interest-cohort=()
+      Set-Cookie:
+      - myosotis=5c492e0526f78816f2046680062cdf77; expires=Tue, 19-Jan-2038 03:14:07
+        GMT; Max-Age=492176119; path=/; domain=.search.ch; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/xml; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="utf-8" ?>
+        <feed xml:lang="de" xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:tel="http://tel.search.ch/api/spec/result/1.0/">
+          <id>https://tel.search.ch/api/<TEL_SEARCH_API_KEY>/568bd23018122481db0fb2bfc94127e7</id>
+          <title type="text">tel.search.ch API Search Results</title>
+          <generator version="1.0" uri="https://tel.search.ch">tel.search.ch</generator>
+          <updated>2022-06-15T17:38:48+02:00</updated>
+          <link href="https://tel.search.ch/result?was=0711231122" rel="alternate" type="text/html" />
+          <link href="http://tel.search.ch/api/?was=0711231122&amp;privat=1&amp;firma=1&amp;key=<TEL_SEARCH_API_KEY>" type="application/atom+xml" rel="self" />
+          <openSearch:totalResults>1</openSearch:totalResults>
+          <openSearch:startIndex>1</openSearch:startIndex>
+          <openSearch:itemsPerPage>1</openSearch:itemsPerPage>
+          <openSearch:Query role="request" searchTerms="0711231122 " startPage="2"></openSearch:Query>
+          <openSearch:Image height="1" width="1" type="image/gif">https://www.search.ch/audit/CP/tel/de/api</openSearch:Image>
+          <entry>
+            <id>urn:uuid:123ab621d23c45ab</id>
+            <updated>2020-12-10T23:45:31+01:00</updated>
+            <published>2020-12-10T23:45:31+01:00</published>
+            <title type="text">Mustermensch, Sarah</title>
+            <content type="text">Mustermensch, Sarah
+            Musterstrasse 13
+            9000 Musterhausen SG
+            *071 123 11 22</content>
+            <tel:nopromo>*</tel:nopromo>
+            <author>
+              <name>tel.search.ch</name>
+            </author>
+            <link href="https://tel.search.ch/musterhausen/musterstrasse-13/sarah-mustermensch" title="Details" rel="alternate" type="text/html" />
+            <link href="https://tel.search.ch/vcard/Mustermensch.vcf?key=123ab621d23c45ab" type="text/x-vcard" title="VCard Download" rel="alternate" />
+            <link href="https://tel.search.ch/edit/?id=123ab621d23c45ab" rel="edit" type="text/html" />
+            <tel:pos>1</tel:pos>
+            <tel:id>123ab621d23c45ab</tel:id>
+            <tel:type>Person</tel:type>
+            <tel:name>Mustermensch</tel:name>
+            <tel:firstname>Sarah</tel:firstname>
+            <tel:street>Musterstrasse</tel:street>
+            <tel:streetno>13</tel:streetno>
+            <tel:zip>9000</tel:zip>
+            <tel:city>Musterhausen</tel:city>
+            <tel:canton>SG</tel:canton>
+            <tel:country>ch</tel:country>
+            <tel:phone>+41711231122</tel:phone>
+            <tel:copyright>Daten: Swisscom Directories AG</tel:copyright>
+          </entry>
+        </feed>
+  recorded_at: Wed, 15 Jun 2022 15:38:48 GMT
+recorded_with: VCR 6.1.0
