@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/tel_search.svg)](https://badge.fury.io/rb/tel_search)
 
-
 A ruby client for the tel.search.ch api. [Docs](https://tel.search.ch/api/help.en.html)
 
 ## Installation
@@ -22,6 +21,7 @@ Or install it yourself as:
     $ gem install tel_search
 
 ## Usage
+
 ```ruby
 client = TelSearch::Client.new(ENV['TEL_API_KEY'])
 query = TelSearch::Query.new(where: 'Wallisellen', what: 'Renuo AG', language: :de)
@@ -32,6 +32,8 @@ response.entries.first.name == 'Renuo AG'
 ```
 
 ## Development
+
+Set `TEL_KEY` in your environment.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
@@ -51,4 +53,4 @@ Everyone interacting in the TelSearch project's codebases, issue trackers, chat 
 
 ## Copyright
 
-Copyright 2021 [Renuo AG](https://www.renuo.ch/).
+Copyright 2021-2022 [Renuo AG](https://www.renuo.ch/).
