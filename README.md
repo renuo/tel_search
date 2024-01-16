@@ -53,4 +53,4 @@ Everyone interacting in the TelSearch project's codebases, issue trackers, chat 
 
 ## Copyright
 
-Copyright 2021-2022 [Renuo AG](https://www.renuo.ch/).
+Copyright 2021-2024 [Renuo AG](https://www.renuo.ch/).
