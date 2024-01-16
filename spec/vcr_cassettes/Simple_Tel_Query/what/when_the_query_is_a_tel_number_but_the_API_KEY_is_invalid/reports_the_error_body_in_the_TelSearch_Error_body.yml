@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tel.search.ch/api/?firma=1&key=<TEL_KEY>&lang=en&maxnum=200&privat=1&was=071%202222%20777&wo=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - tel.search.ch
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Tue, 16 Jan 2024 19:48:03 GMT
+      Server:
+      - Apache
+      Permissions-Policy:
+      - interest-cohort=()
+      Set-Cookie:
+      - myosotis=f8dd371bcb484cd4dd7457c404fdd42a; expires=Tue, 19 Jan 2038 03:14:07
+        GMT; Max-Age=442049164; path=/; domain=.search.ch; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '631'
+      Content-Type:
+      - text/xml; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8" ?>
+        <feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:tel="http://tel.search.ch/api/spec/result/1.0/">
+          <id>https://tel.search.ch/api/error-403</id>
+          <title type="text">tel.search.ch API Error</title>
+          <generator version="1.0" uri="https://tel.search.ch">tel.search.ch</generator>
+          <updated>2024-01-16T20:48:03+01:00</updated>
+          <link rel="help" href="https://tel.search.ch/api/help" type="text/html" />
+          <tel:errorCode>403</tel:errorCode>
+          <tel:errorReason>Forbidden</tel:errorReason>
+          <tel:errorMessage>The submitted API-Key is invalid or blocked</tel:errorMessage>
+        </feed>
+  recorded_at: Tue, 16 Jan 2024 19:48:03 GMT
+recorded_with: VCR 6.0.0

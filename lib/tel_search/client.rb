@@ -14,7 +14,10 @@ module TelSearch
 
     def execute(query)
       params_for_request = request_params(query.to_h)
-      parse_response(send_request(params_for_request))
+      response = send_request(params_for_request)
+      raise TelSearch::Error.new(response.body) unless response.kind_of?(Net::HTTPSuccess)
+
+      parse_response(response)
     end
 
     private

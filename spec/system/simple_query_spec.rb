@@ -44,6 +44,18 @@ RSpec.describe "Simple Tel Query", :vcr do
       end
     end
 
+    context "when the query is a tel number but the API_KEY is invalid" do
+      let(:what) { "071 2222 777" }
+
+      it "raises an exception" do
+        expect { subject }.to raise_error(TelSearch::Error)
+      end
+
+      it "reports the error body in the TelSearch::Error body" do
+        expect { subject }.to raise_error (/API-Key is invalid/)
+      end
+    end
+
     context "when the query is a name" do
       let(:what) { "Renuo AG" }
 
