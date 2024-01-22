@@ -34,12 +34,12 @@ module TelSearch
 
     def transform_value(value)
       case value
-        when true
-          "1"
-        when false
-          "0"
-        else
-          value
+      when true
+        "1"
+      when false
+        "0"
+      else
+        value
       end
     end
   end

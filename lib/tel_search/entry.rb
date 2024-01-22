@@ -81,7 +81,7 @@ module TelSearch
     def set_property(prop_name, prop_value)
       return if prop_value.nil?
 
-      send("#{prop_name}=", prop_value.count > 1 ? prop_value : prop_value.first)
+      send(:"#{prop_name}=", (prop_value.count > 1) ? prop_value : prop_value.first)
     end
   end
 end
