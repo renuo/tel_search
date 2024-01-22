@@ -8,6 +8,12 @@ require_relative "tel_search/response"
 require_relative "tel_search/version"
 
 module TelSearch
-  class Error < StandardError; end
-  # Your code goes here...
+  class Error < StandardError
+    attr_reader :response
+
+    def initialize(response)
+      super(response.body)
+      @response = response
+    end
+  end
 end
