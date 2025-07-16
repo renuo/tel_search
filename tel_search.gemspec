@@ -27,4 +27,12 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "nokogiri", ">= 1.16.5"
+
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.10"
+  spec.add_development_dependency "standard", "~> 1.33"
+  spec.add_development_dependency "webmock", "~> 3.19"
+  spec.add_development_dependency "vcr", "~> 6.2"
 end
