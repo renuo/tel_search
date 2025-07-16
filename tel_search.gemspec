@@ -5,8 +5,8 @@ require_relative "lib/tel_search/version"
 Gem::Specification.new do |spec|
   spec.name = "tel_search"
   spec.version = TelSearch::VERSION
-  spec.authors = ["Liberatys"]
-  spec.email = ["nick.flueckiger@renuo.ch"]
+  spec.authors = ["Liberatys", "Raphael Nestler"]
+  spec.email = ["nick.flueckiger@renuo.ch", "raphael.nestler@renuo.ch"]
 
   spec.summary = "A ruby wrapper for the tel.search.ch/api endpoint"
   spec.description = "A ruby wrapper for the tel.search.ch/api endpoint"
