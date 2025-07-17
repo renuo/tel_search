@@ -5,8 +5,8 @@ require_relative "lib/tel_search/version"
 Gem::Specification.new do |spec|
   spec.name = "tel_search"
   spec.version = TelSearch::VERSION
-  spec.authors = ["Liberatys"]
-  spec.email = ["nick.flueckiger@renuo.ch"]
+  spec.authors = ["Liberatys", "Raphael Nestler"]
+  spec.email = ["nick.flueckiger@renuo.ch", "raphael.nestler@renuo.ch"]
 
   spec.summary = "A ruby wrapper for the tel.search.ch/api endpoint"
   spec.description = "A ruby wrapper for the tel.search.ch/api endpoint"
@@ -27,4 +27,12 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "nokogiri", ">= 1.16.5"
+
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.10"
+  spec.add_development_dependency "standard", "~> 1.33"
+  spec.add_development_dependency "webmock", "~> 3.19"
+  spec.add_development_dependency "vcr", "~> 6.2"
 end

@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     tel_search (0.2.0)
+      nokogiri (>= 1.16.5)
 
 GEM
   remote: https://rubygems.org/
@@ -87,13 +88,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  nokogiri
   rake (~> 13.0)
-  rspec (~> 3.0)
-  standard
+  rspec (~> 3.10)
+  standard (~> 1.33)
   tel_search!
-  vcr
-  webmock
+  vcr (~> 6.2)
+  webmock (~> 3.19)
 
 BUNDLED WITH
    2.2.32
